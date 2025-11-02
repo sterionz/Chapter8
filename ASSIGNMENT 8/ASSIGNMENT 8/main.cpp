@@ -1,4 +1,4 @@
-// Name: Alex Jacobs, David Nguyen, Gabriel Lira, Jessy Zuniga, Cristine Llano, and Jorge Gonzalez
+ï»¿// Name: Alex Jacobs, David Nguyen, Gabriel Lira, Jessy Zuniga, Cristine Llano, and Jorge Gonzalez
 // Date: 11-1-2025
 // Description: Chapter 8 Assignments
 #include <iostream>
@@ -163,12 +163,16 @@ void option1()
             }
         }
         round++;
+        cout << "\n";
     }
 
     if (player1.size() > player2.size())
-        cout << "\n\nPlayer1 wins the war with most number of cards (" << totalCards << ").\n";
+        cout << "\n\n\tPlayer1 wins the war with most number of cards (" << totalCards << ").\n";
     else
-        cout << "\n\nPlayer2 wins the war with most number of cards (" << totalCards << ").\n";
+        cout << "\n\n\tPlayer2 wins the war with most number of cards (" << totalCards << ").\n";
+
+    cout << "\n\t";
+    system("pause");
 }
 
 void option2()
@@ -314,8 +318,8 @@ void option3()
         {
         case 1:
         {
-            total_time = inputInteger("\n\tEnter store operating time in seconds(0–37800): ", 0, 37800);
-            num_registers = inputInteger("\n\tEnter number of cash registers (1–10): ", 1, 10);
+            total_time = inputInteger("\n\tEnter store operating time in seconds(0-37800): ", 0, 37800);
+            num_registers = inputInteger("\n\tEnter number of cash registers (1-10): ", 1, 10);
 
             costco_simulate(total_time, num_registers, arrival_prob, display_interval, sim_speed_ms);
             cout << "\n\t";

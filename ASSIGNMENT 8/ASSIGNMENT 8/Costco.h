@@ -2,6 +2,7 @@
 // THIS IS ALL BASED ON CHAPTER 8 of the book. The code was modified from the washing .cpp and .h and main.
 #ifndef COSTCO
 #define COSTCO
+
 #ifndef NAMESPACE_AS_8
 #define NAMESPACE_AS_8
 #include <cassert> // Provides assert for precondition checks
@@ -53,6 +54,7 @@ namespace as_8
     }
 }
 #endif // !NAMESPACE_AS_8
+
 #include <cassert> // Provides assert (not used here, included for consistency)
 #include <cstdlib> // Provides rand and RAND_MAX (redundant)
 #include <iostream> // For console output (cout)
@@ -129,6 +131,7 @@ void costco_simulate(unsigned int total_time, unsigned int num_registers, double
     std::string cart_symbol = "#"; // Symbol used to represent carts in display (e.g., #12# for front customer)
 
     // Main simulation loop: Runs for each simulated second
+    // Steps 0-4 are repeated until the time is up.
     while (current_second < total_time) {
         ++current_second; // Increment the time counter (Step 0: Advance time)
 
@@ -203,7 +206,6 @@ void costco_simulate(unsigned int total_time, unsigned int num_registers, double
 
     // 5. Final report
     //   - Outputs closure message, total served, and average (total_served / total_time, handling division by zero)
-    
     cout << "\nStore closed!\n";
     cout << "Total customers served: " << total_served << "\n";
     cout << "Average service (customers/sec): "
